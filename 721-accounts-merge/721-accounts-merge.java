@@ -7,9 +7,9 @@ class Solution {
         
         owner - <Email, Name>
         parent - <Email, EmailParent> first email on accounts string will be parent, of remaining emails on same row
-        union  - <Parent, TreeSet Emails> real merge - parent, children, essentially getting rid of duplicate parentValues on parent map
+        union  - <Parent, TreeSet Emails> merge - parent, children, essentially getting rid of duplicate parentValues on parent map
         
-        IMPORTANT
+        IMPORTANT!!!
         findParent function - you are a parent only if in parent map EMAIL == EMAIL
         //if findParent returns self then parent is found, else recursively go up parent map unti EMAIL == EMAIL;
         
@@ -72,8 +72,8 @@ class Solution {
             - - - - - - -- - - -- - - edge case to help understand the row by row merge - - - - - - -- - - -- 
             
             given:
-            [["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe2@m.co"],
-            ["Gabe","Gabe3@m.co","Gabe4@m.co","Gabe2@m.co"]]
+            [["Gabe","  Gabe0@m.co","Gabe3@m.co","Gabe2@m.co"],
+            ["Gabe","   Gabe3@m.co","Gabe4@m.co","Gabe2@m.co"]]
 
 
             initial
@@ -126,6 +126,9 @@ class Solution {
                 Gabe4@m.co         Gabe4@m.co
                 
                 you need to find parent for each new first element of new row
+                
+                the first email of each row is not always the parent
+                First we merge ROWS then we set row emails to parent
             */
                                     //"A@mail.com"
             String parent = findParent(a.get(1), parents);
