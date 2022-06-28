@@ -25,10 +25,10 @@ class Solution {
             
             
                       ------------- 1st loop ---------
-                      create parentEMail map and owner 
+                      create/setup parentEMail map and owner 1:1
                
             parents 
-                     Email                       parentEmail
+                      Email                       parentEmail
                      [A@mail.com]               [A@mail.com]
                      [john_newyork@mail.com]    [john_newyork@mail.com]
                      [A@mail.com"]              [A@mail.com"] -- row does not exist, put again, removed duplicate 
@@ -38,6 +38,7 @@ class Solution {
                      
             
             owner   
+                       Email                    Name
                      [A@mail.com]              [John]
                      [john_newyork@mail.com]   [John]
                      [A@mail.com"]             [John]
@@ -118,6 +119,11 @@ class Solution {
                 [["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe2@m.co"],
                 ["Gabe","Gabe3@m.co","Gabe4@m.co","Gabe2@m.co"]]
                 
+                
+                "Gabe0@m.co"    "Gabe0@m.co"
+                "Gabe3@m.co      "Gabe0@m.co
+                Gabe2@m.co       Gabe2@m.co
+                Gabe4@m.co         Gabe4@m.co
                 
                 you need to find parent for each new first element of new row
             */
