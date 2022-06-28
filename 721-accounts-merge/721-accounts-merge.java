@@ -167,3 +167,35 @@ class Solution {
             return parent == email ? email : findParent(parent, parents);
         }
 }
+
+
+/*
+        ILLUSTRATION of 2nd loop:
+        
+        ["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe2@m.co"]
+        ["Gabe","Gabe3@m.co","Gabe4@m.co","Gabe2@m.co"]
+        
+        
+        
+1. form first parent:
+        
+            
+                Gabe0@m.co
+            
+        Gabe3@m.co      Gabe2@m.co
+        
+ 
+ 
+ 
+2. merge sub emails to parent
+        
+                Gabe0@m.co
+            
+        Gabe3@m.co      Gabe2@m.co
+        
+    Gabe4@m.co
+        
+        
+        
+
+*/
