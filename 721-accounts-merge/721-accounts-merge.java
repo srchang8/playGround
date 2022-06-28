@@ -139,6 +139,7 @@ class Solution {
         }
             
         //sort and merge parents
+        //Map<parent, TreeSet<Emails>
         for (List<String> acc : accounts){
                                 //A@mail.com
             String parent = findParent(acc.get(1), parents);
