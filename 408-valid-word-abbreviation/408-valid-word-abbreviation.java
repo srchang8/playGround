@@ -6,7 +6,10 @@ class Solution {
     Space: o(1)
     
     
-    THIS IS EDGE CASE QUESTION, see below test cases
+    THIS IS EDGE CASE QUESTION, see below test cases but much easier to implement if
+    we check if j abbr is a character or digit
+    
+    Algorithm acts on either if j abbr is a char or digit
      
     - - - - - - Illustration  - - -- - - --- -  -
 
@@ -33,9 +36,6 @@ class Solution {
 "a2e"
 "internationalization"
 "i5a11o1"
-
-
-"a"
 "01"
 
 "hi"
