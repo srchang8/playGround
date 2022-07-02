@@ -77,3 +77,73 @@ class Solution {
 //         return result;
 //     }
 // }
+
+
+
+/*
+    quick select solution
+    
+    
+    lass Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+        
+        // construct the key to array
+        int len = map.keySet().size();
+        int[] unique = new int[len];
+        int i = 0;
+        
+        for (int num : map.keySet()) {
+            unique[i++] = num;
+        }
+        
+        // partition 
+        int start = 0;
+        int end = len -1;
+        
+        while (start < end) {
+            int pivot = partition(unique, map, start, end);
+            if (pivot ==  len - k) {
+                break;
+            } else if (pivot < len - k) {
+                start = pivot + 1;
+            } else {
+                end = pivot - 1 ;
+            }
+        }
+        
+        return Arrays.copyOfRange(unique, len - k, len);
+        
+    }
+
+    
+    // end node postion
+    private int partition(int[] input, Map<Integer, Integer> map , int start, int end) {
+        
+        int value = map.get(input[end]);
+        int wall = start;
+        for (int i = wall; i < end; i++) {
+            if (map.get(input[i]) < value) {
+                swap(input, wall, i);
+                wall ++;
+            }
+        }
+        
+        swap(input, wall, end);
+        return wall;
+        
+    }
+        
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+}
+
+
+*/
