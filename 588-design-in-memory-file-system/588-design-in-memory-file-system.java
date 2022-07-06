@@ -22,11 +22,17 @@
                                     
                                     
                                     
-    Edited Test case:
+    Test cases:
     
+        test for multiple files/dir under directory
     ["FileSystem","ls","mkdir","addContentToFile","ls","readContentFromFile"]
     [[],["/"],["/a/b/c"],["/a/b/d","hello"],["/a/b"],["/a/b/d"]]
           
+          
+        test for lexicographic order
+    ["FileSystem","ls","mkdir","mkdir","mkdir","ls"]
+    [[],["/"],["/a/b/e"],["/a/b/d"],["/a/b/a"],["/a/b"]]
+    
     */
 
 
