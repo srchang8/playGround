@@ -1,4 +1,6 @@
 /*
+
+    Essentially we this is a trie implementation
     
     Exmaples 1:
     
