@@ -68,6 +68,7 @@ public class FileSystem {
     // main algorithm
     // 1. return the the last fileNode
     // 2. creates path and fileNodes if they dont exist
+    //3. start from root and search down
     private FileNode findNode(String path){
         String[] files = path.split("/");
 
