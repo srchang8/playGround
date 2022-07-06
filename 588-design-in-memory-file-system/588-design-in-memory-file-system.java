@@ -35,6 +35,11 @@
     ["FileSystem","ls","mkdir","mkdir","mkdir","ls"]
     [[],["/"],["/a/b/e"],["/a/b/d"],["/a/b/a"],["/a/b"]]
     
+    
+    
+    ["FileSystem","mkdir","    ls",     "ls","mkdir","ls","ls"," addContentToFile","       ls",    "ls","         ls"]
+    [    [],  ["/goowmfn"],["/goowmfn"],["/"],["/z"],["/"],["/"],["/goowmfn/c","shetopcy"],["/z"],["/goowmfn/c"],["/goowmfn"]]
+    
     */
 
 
@@ -125,6 +130,7 @@ public class FileSystem {
             }else{
                 list.addAll(children.keySet());
             }
+            
 
             return list;
         }
