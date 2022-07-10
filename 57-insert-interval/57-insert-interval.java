@@ -1,5 +1,7 @@
 class Solution {
     /*
+    
+    kind of similar to merge but not really
             
     - - - - -- - -Algorith: - - -- - - -- - - - -
            
