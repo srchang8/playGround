@@ -45,15 +45,15 @@ class Solution {
         boolean[][] atlanticReachable = new boolean[numRows][numCols];
         
         //add verticals: left col and right col
-        for (int i = 0; i < numRows; i++) {
-            pacificQueue.offer(new int[]{i, 0});
-            atlanticQueue.offer(new int[]{i, numCols - 1});
+        for (int y = 0; y < matrix.length; y++) {
+            pacificQueue.offer(new int[]{y, 0});
+            atlanticQueue.offer(new int[]{y, matrix[0].length - 1});
         }
         
         //add horizontal: top and bottom row
-        for (int i = 0; i < numCols; i++) {
-            pacificQueue.offer(new int[]{0, i});
-            atlanticQueue.offer(new int[]{numRows - 1, i});
+        for (int x = 0; x < matrix[0].length; x++) {
+            pacificQueue.offer(new int[]{0, x});
+            atlanticQueue.offer(new int[]{matrix.length - 1, x});
         }
         
         
@@ -82,9 +82,12 @@ class Solution {
         while (!queue.isEmpty()) {
             
             int[] p = queue.poll();
+            int y = p[0];
+            int x = p[1];
+            
             
             // This cell is reachable, so mark it
-            visited[p[0]][p[1]] = true;
+            visited[y][x] = true;
             
             for (int[] dir : DIRECTIONS) { // Check all 4 directions
                 int yN = p[0] + dir[0];
