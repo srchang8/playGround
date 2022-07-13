@@ -48,23 +48,32 @@ class Solution {
    
         }
         
+        TreeNode pStart = p;
+        TreeNode qStart = q;
         
-        //we add q itself because q can also be the LCA
-        HashSet<TreeNode> qAncestors = new HashSet();
-        while (q != null){
-            qAncestors.add(q);
-            q = parentMap.get(q);
+        while (p != q){
+            p = parentMap.get(p) == null ? qStart : parentMap.get(p);
+            q = parentMap.get(q) == null ? pStart : parentMap.get(q);
         }
-        
-        //iterate through p ancestors until we find common one
-        //the order is least because map goes child up parent, so it will always check from bottom up
-        while (!qAncestors.contains(p)){
-            p = parentMap.get(p);
-        }
-        
-        
         
         return p;
+        
+        //we add q itself because q can also be the LCA
+//         HashSet<TreeNode> qAncestors = new HashSet();
+//         while (q != null){
+//             qAncestors.add(q);
+//             q = parentMap.get(q);
+//         }
+        
+//         //iterate through p ancestors until we find common one
+//         //the order is least because map goes child up parent, so it will always check from bottom up
+//         while (!qAncestors.contains(p)){
+//             p = parentMap.get(p);
+//         }
+        
+        
+        
+//         return p;
     }
 }
 
