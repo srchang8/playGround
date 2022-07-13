@@ -1,14 +1,21 @@
 class Solution {
-    /*
+   /*
+
+    1. parse into String[] paths
+    2. process through stack
+        
+        /home//foo/../boo/.
+        
+        .    -- ignore
+        boo  -- add
+        ..   -- pop
+        foo  -- add
+        " "  -- ignore
+        home -- add
+        
+        IMPORTANT - - - - -
+        EMPTY case return /
     
-        /home//foo/../.
-        
-        .    -> ignore
-        ..   -> pop
-        foo  -> add to stack
-        ""   -> ignore
-        home -> add stack
-        
     */
     public String simplifyPath(String path) {
         
