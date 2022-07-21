@@ -45,8 +45,9 @@ class Solution {
             to be e before it
         if char is e || E
             no E or E before it
+            has to have seenDigit
             mark seenExponent
-            resset seenDigit
+            reset seenDigit
         if char is .
             cant have seen . already
             cant have seen exponent
@@ -70,6 +71,7 @@ class Solution {
                 seenExponent = true;
                 seenDigit = false;
             } else if (curr == '.'){
+                //1e.1 is invalid
                 if (seenDot || seenExponent) return false;
                 seenDot = true;
             }else{
