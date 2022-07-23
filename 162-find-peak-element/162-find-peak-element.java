@@ -4,8 +4,11 @@ class Solution {
         
         /*
         
-        search for / until doesnt /
-        search for \ now
+        / shift left
+        \ shift right
+        
+        keep shifting left until \
+        go back to check /
         
         
         
