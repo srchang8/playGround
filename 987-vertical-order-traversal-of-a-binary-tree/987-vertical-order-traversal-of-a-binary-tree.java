@@ -79,7 +79,7 @@ class Solution {
         public int compare(NodeInfo n1, NodeInfo n2){
             if(n1.row < n2.row) return -1;
             if(n1.row > n2.row) return 1;
-            else return n1.node.val - n2.node.val;
+            return n1.node.val - n2.node.val;
         }
     }
     
