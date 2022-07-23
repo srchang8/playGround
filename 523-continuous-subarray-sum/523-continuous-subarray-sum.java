@@ -6,20 +6,27 @@ class Solution {
         Time: o(n)
         
         
-        Algorithm
-        Traverse nums and fill map<rollingSum % k, index>
-        
-        1. base case 0, -1
-        
-        2. add rollingSUm%k, index to map
-           rolling sum sum + nums[i]
-           mod =  sum % k
-           putIfAbsent
-           
-        3. if map contains mod and its more than 2 index return true
-        
-        
-        4. return false
+--- - - - - - Best explanation  - - - -- - -      
+
+         //when map contains mod, it means that there exist an 
+    //subarray from 0~j (j=map.get(mod)) where its sum%k==mod.
+      //which means that subarray sum( j~i) %k==0. 
+      
+      
+      nums = [23,2,4,6,7], k = 6
+             [5][1,5]
+  
+      0,-1
+      5,0   23 % 6 = 3 x 6 = 18  = 23-18 = 5
+      1,1
+      5,2   29 % 6 = 4 x 6 = 24  = 29-24 = 5
+      
+      
+      |  A   |     D    |B|
+      
+      D = B-A
+      
+
         
     */
    
@@ -85,12 +92,26 @@ class Solution {
 */
 
 
- //when map contains mod, it means that there exist an 
-    //subarray from 0~j (j=map.get(mod)) where its sum%k==mod.
-      //which means that subarray sum( j~i) %k==0. 
-      //[0,1,2,3,4,5,6] k=3
+
     /*
     
+    
+    
+     Algorithm
+        Traverse nums and fill map<rollingSum % k, index>
+        
+        1. base case 0, -1
+        
+        2. add rollingSUm%k, index to map
+           rolling sum sum + nums[i]
+           mod =  sum % k
+           putIfAbsent
+           
+        3. if map contains mod and its more than 2 index return true
+        
+        
+        4. return false
+        
     
     IMPORTANT!!! PUT IF ABSENT!
     
