@@ -4,12 +4,12 @@ class Solution {
         
         int left=0;
         int right=s.length()-1;
-        boolean noChar = false;
+//         boolean noChar = false;
         
-        for (int i=0; i<s.length(); i++){
-            if (Character.isLetterOrDigit(s.charAt(i))) noChar = false;
-        }
-        if (noChar) return false;
+//         for (int i=0; i<s.length(); i++){
+//             if (Character.isLetterOrDigit(s.charAt(i))) noChar = false;
+//         }
+//         if (noChar) return false;
         
         while (left < right){
             
