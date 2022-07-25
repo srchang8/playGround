@@ -84,57 +84,59 @@ class Solution {
     quick select solution
     
     
-    lass Solution {
+    class Solution {
     public int[] topKFrequent(int[] nums, int k) {
+        
+        
         Map<Integer, Integer> map = new HashMap<>();
         
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
         
-        // construct the key to array
-        int len = map.keySet().size();
-        int[] unique = new int[len];
+        // put map keys to array in any order
+        int[] unique = new int[map.keySet().size()];
         int i = 0;
-        
         for (int num : map.keySet()) {
             unique[i++] = num;
         }
         
-        // partition 
-        int start = 0;
-        int end = len -1;
+        k = map.keySet().size() - k;
         
-        while (start < end) {
-            int pivot = partition(unique, map, start, end);
-            if (pivot ==  len - k) {
+        // partition 
+        int left = 0;
+        int right = unique.length-1;
+        
+        while (left < right) {
+            int j = partition(unique, map, left, right);
+            if (j ==  k) {
                 break;
-            } else if (pivot < len - k) {
-                start = pivot + 1;
+            } else if (j < k) {
+                left = j + 1;
             } else {
-                end = pivot - 1 ;
+                right = j - 1 ;
             }
         }
         
-        return Arrays.copyOfRange(unique, len - k, len);
+        return Arrays.copyOfRange(unique, k, map.keySet().size());
         
     }
 
     
     // end node postion
-    private int partition(int[] input, Map<Integer, Integer> map , int start, int end) {
+    private int partition(int[] nums, Map<Integer, Integer> map , int start, int end) {
         
-        int value = map.get(input[end]);
-        int wall = start;
-        for (int i = wall; i < end; i++) {
-            if (map.get(input[i]) < value) {
-                swap(input, wall, i);
-                wall ++;
+        int pivot = map.get(nums[end]);
+        int i = start;
+        for (int j = start; j < end; j++) {
+            if (map.get(nums[j]) <= pivot) {
+                swap(nums, i, j);
+                i++;
             }
         }
         
-        swap(input, wall, end);
-        return wall;
+        swap(nums, i, end);
+        return i;
         
     }
         
