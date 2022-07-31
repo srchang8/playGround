@@ -147,7 +147,7 @@ map2: {0:[[0,7],[2,10]],
         return result;
     }
     
-    // [0:1, 1:2, 2:3] [0:7, 1:8, 2:9]
+    // [0:1, 1:2, 2:3] x [0:7, 1:8, 2:9]
     public int multHelper(List<int[]> rowList, List<int[]>  colList){
         int y=0;
         int x=0;
