@@ -23,23 +23,6 @@ class Solution {
     
 
     */
-    public ArrayList<ArrayList<Pair<Integer, Integer>>> compressMatrix(int[][] matrix) {
-        int rows = matrix.length;
-        int cols = matrix[0].length;
-        
-        ArrayList<ArrayList<Pair<Integer, Integer>>> compressedMatrix = new ArrayList<>();
-        
-        for (int row = 0; row < rows; ++row) {
-            ArrayList<Pair<Integer, Integer>> currRow = new ArrayList<>();
-            for (int col = 0; col < cols; ++col) {
-                if (matrix[row][col] != 0) {
-                    currRow.add(new Pair(matrix[row][col], col)); 
-                }
-            }
-            compressedMatrix.add(currRow);
-        }
-        return compressedMatrix;
-    }
     
     public int[][] multiply(int[][] mat1, int[][] mat2) {
         int m = mat1.length;
@@ -47,8 +30,10 @@ class Solution {
         int n = mat2[0].length;
         
         // Store the non-zero values of each matrix.
-        ArrayList<ArrayList<Pair<Integer, Integer>>> A = compressMatrix(mat1);
-        ArrayList<ArrayList<Pair<Integer, Integer>>> B = compressMatrix(mat2);
+        //ArrayList<ArrayList<Pair<Integer, Integer>>> A = compressMatrix(mat1);
+         List<List<Pair<Integer, Integer>>> B = compressMatrix(mat2);
+        
+        List<List<Pair<Integer, Integer>>> A = compressMatrix(mat1);
         
         int[][] ans = new int[m][n];
         
@@ -69,5 +54,24 @@ class Solution {
         }
         
         return ans;
+    }
+    
+    
+    public  List<List<Pair<Integer, Integer>>> compressMatrix(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        
+         List<List<Pair<Integer, Integer>>> compressedMatrix = new ArrayList<>();
+        
+        for (int row = 0; row < rows; ++row) {
+            ArrayList<Pair<Integer, Integer>> currRow = new ArrayList<>();
+            for (int col = 0; col < cols; ++col) {
+                if (matrix[row][col] != 0) {
+                    currRow.add(new Pair(matrix[row][col], col)); 
+                }
+            }
+            compressedMatrix.add(currRow);
+        }
+        return compressedMatrix;
     }
 }
