@@ -6,6 +6,11 @@ class Solution {
         
         [3,3,5]
             0
+            
+         
+         head is already pointing to self, max = 1, min also = 1
+        [1]
+         2
     
     */
     
@@ -56,6 +61,7 @@ class Solution {
         //insert outside of min-max 
         //can be on either side
         //Insert-- 1--3--4 -- Insert
+        //Insert-- 1 -- Insert
         if (insertVal <= min.val || insertVal >= max.val){
             max.next = new Node(insertVal, min);
         }else{
