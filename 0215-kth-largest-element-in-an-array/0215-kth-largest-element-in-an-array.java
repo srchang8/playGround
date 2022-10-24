@@ -3,7 +3,7 @@ class Solution {
     /*
         
         QuickSelect runtime:
-        Time: o(n) on average, o(n^2) on worst case
+        Time: o(n) on average, o(n^2) worst case: you keep picking bad pivots, but rare
         Space: o(1)
         
         Heap runtime: 
