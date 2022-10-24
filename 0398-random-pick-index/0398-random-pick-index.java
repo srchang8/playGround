@@ -3,6 +3,10 @@
     
 //     /*
 //         IMPORTANT: question is just asking to get a random index that = target
+
+//         resovoir TLE but its probably because rand.nextInt(9999) causing it
+//         resovoir speed: times: o(n), space o(1)
+//         hashMap  speed: times: o(n), space o(n)
         
         
 //         Algorith: 
