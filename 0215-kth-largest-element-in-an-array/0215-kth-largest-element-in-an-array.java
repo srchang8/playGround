@@ -2,8 +2,16 @@ class Solution {
         
     /*
         
-        Time: o(n)
+        QuickSelect runtime:
+        Time: o(n^2)
         Space: o(1)
+        
+        Heap runtime: 
+        Time: o(n log(k))
+            priority queue insertion takes log(k)
+            do it for each N
+        space: o(k) 
+            
     */
     
     public int findKthLargest(int[] nums, int k) {
