@@ -3,7 +3,7 @@ class Solution {
     /*
         
         QuickSelect runtime:
-        Time: o(n^2)
+        Time: o(n) on average, o(n^2) on worst case
         Space: o(1)
         
         Heap runtime: 
