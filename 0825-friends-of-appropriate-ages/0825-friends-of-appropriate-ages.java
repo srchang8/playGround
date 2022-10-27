@@ -55,7 +55,9 @@ class Solution {
             
             // remove ages <= 0.5 * age[x] + 7
             int count = sumInAge[i] - sumInAge[i / 2 + 7];
-            res += (count * numInAge[i]) - numInAge[i]; //people will not friend request themselves, so  - numInAge[i]
+            
+            //people will not friend request themselves, so  - numInAge[i]
+            res += (count * numInAge[i]) - numInAge[i]; 
         }
         return res;
     }
