@@ -30,7 +30,9 @@ class Solution {
     This will give you how many people in this bracket and below.
 
     int count = sumInAge[i] - sumInAge[i / 2 + 7];
-    This will give you how many requests can you send from this age. There could be multiple people in this age group so we need to multiply
+    This will give you how many requests can you send from this age. 
+    
+    There could be multiple people in this age group so we need to multiply
     count * numInAge[i]
 
     You need to account for not sending to itself so you substract
@@ -53,7 +55,7 @@ class Solution {
             
             // remove ages <= 0.5 * age[x] + 7
             int count = sumInAge[i] - sumInAge[i / 2 + 7];
-            res += count * numInAge[i] - numInAge[i]; //people will not friend request themselves, so  - numInAge[i]
+            res += (count * numInAge[i]) - numInAge[i]; //people will not friend request themselves, so  - numInAge[i]
         }
         return res;
     }
