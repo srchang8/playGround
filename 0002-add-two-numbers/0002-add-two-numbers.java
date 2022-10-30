@@ -9,9 +9,11 @@
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
-        int carry =0, sum=0;
+        int carry =0;
+        int sum=0;
+        
         ListNode dummy = new ListNode(-1);
-        ListNode head = dummy;
+        ListNode bef = dummy;
         
         
         while (l1 != null || l2 !=null){
@@ -26,17 +28,16 @@ class Solution {
             }
             
             sum += carry;
+            carry = 0;
             
             if (sum > 9){
                 carry = 1;
                 sum = sum%10;
-            }else{
-                carry = 0;
             }
             
             ListNode node = new ListNode(sum);
-            head.next = node;
-            head = node;
+            bef.next = node;
+            bef = node;
             
             sum =0;
 
@@ -44,7 +45,7 @@ class Solution {
         
         if (carry != 0){
             ListNode node = new ListNode(1);
-            head.next = node;
+            bef.next = node;
         }
         
         return dummy.next;
