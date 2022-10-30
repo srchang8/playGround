@@ -47,7 +47,7 @@ class Solution {
         for(int i : ages) 
             numInAge[i] ++;
         
-        for(int i = 1; i <= 120; ++i) 
+        for(int i = 1; i<sumInAge.length; ++i) 
             sumInAge[i] = numInAge[i] + sumInAge[i - 1];
         
         for(int i = 15; i <= 120; ++i) {
