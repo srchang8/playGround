@@ -42,15 +42,16 @@ class Solution {
     
     public int numFriendRequests(int[] ages) {
         int res = 0;
-        int[] numInAge = new int[121], sumInAge = new int[121];
+        int[] numInAge = new int[121];
+        int[] sumInAge = new int[121];
         
         for(int i : ages) 
             numInAge[i] ++;
         
-        for(int i = 1; i<sumInAge.length; ++i) 
+        for(int i = 1; i<numInAge.length; i++) 
             sumInAge[i] = numInAge[i] + sumInAge[i - 1];
         
-        for(int i = 15; i <= 120; ++i) {
+        for(int i = 15; i<numInAge.length; i++) {
             if(numInAge[i] == 0) continue;
             
             // remove ages <= 0.5 * age[x] + 7
